@@ -22,7 +22,7 @@ jobs:
       run: |
         mkdir db
         mv imdb_top_250.xlsx db/
-        mv imdb_top_250.xlsx db/
+        mv imdb_top_250.html db/
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
