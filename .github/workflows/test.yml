@@ -17,14 +17,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Local changes
-      run: |
-        git add imdb_top_250.html
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Add changes"
+        git commit -m "Add changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
