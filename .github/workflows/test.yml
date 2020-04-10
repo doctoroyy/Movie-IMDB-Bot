@@ -19,12 +19,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Local changes
       run: |
-        echo "hello world" > index.html
+        git add imdb_top_250.html
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add imdb_top_250.html
         git commit -m "Add changes"
     - name: Push changes
       uses: ad-m/github-push-action@master
