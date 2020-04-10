@@ -18,15 +18,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Local changes
-      run: |
-        echo "sdjf" > test.ini
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add test.ini
-        git commit -m "Add changes" -a
+        git commit -m "Add changes"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
