@@ -17,15 +17,17 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: 'Send mail to Me'
-      uses: dawidd6/action-send-mail@master
+    - name: Local changes
+      run: |
+        echo "hello world" > index.html
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add imdb_top_250.html
+        git commit -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        server_address: smtp.163.com
-        server_port: 465
-        username: ${{ secrets.MAIL_USERNAME }}
-        password: ${{ secrets.MAIL_PASSWORD }}
-        subject: 鹭玲学姐早安！
-        body: file://imdb_top_250.html
-        to: 1445245708@qq.com
-        from: Movie IMDB Bot
-        content_type: text/html
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
