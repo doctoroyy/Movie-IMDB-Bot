@@ -34,10 +34,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add imdb_top_250.xlsx
-        git add imdb_top_250.html
         git commit -m "Add changes" -a
-        git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
@@ -64,9 +61,9 @@ jobs:
         server_port: 465
         username: ${{ secrets.QQ_MAIL_USERNAME }}
         password: ${{ secrets.QQ_MAIL_PASSWORD }}
-        subject: 鹭玲学姐早安！
+        subject: IMDB-TOP-250 (${{env.REPORT_DATE}})
         body: file://imdb_top_250.html
         to: 1569033576@qq.com
-        from: Movie IMDB Bot
+        from: 鹭玲学姐早安!
         content_type: text/html
         attachments: imdb_top_250.xlsx
