@@ -28,6 +28,6 @@ jobs:
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: 每日提醒
         body: '起床锻炼啦！'
-        to: 1569033576@qq.com
+        to: 1445245708@qq.com
         from: Movie IMDB Bot
         content_type: text/html
