@@ -34,7 +34,7 @@ jobs:
     - name: 'Send mail to Me'
       uses: dawidd6/action-send-mail@master
       with:
-        server_address: smtp.163.com
+        server_address: smtp.qq.com
         server_port: 465
         username: ${{ secrets.QQ_MAIL_USERNAME }}
         password: ${{ secrets.QQ_MAIL_PASSWORD }}
