@@ -31,3 +31,4 @@ jobs:
         to: 1445245708@qq.com
         from: Movie IMDB Bot
         content_type: text/html
+    
