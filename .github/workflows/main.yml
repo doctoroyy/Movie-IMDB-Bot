@@ -62,7 +62,7 @@ jobs:
         username: ${{ secrets.QQ_MAIL_USERNAME }}
         password: ${{ secrets.QQ_MAIL_PASSWORD }}
         subject: 每日提醒
-        body: '起床锻炼啦！'
+        body: '鹭玲学姐起床啦！'
         to: 1569033576@qq.com
         from: Movie IMDB Bot
         content_type: text/html
