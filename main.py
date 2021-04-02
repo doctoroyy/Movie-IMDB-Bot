@@ -345,14 +345,7 @@ if __name__ == '__main__':
 
     print(movie_list)
     for movie in movie_list:
-        try:
-            # print(movie['id'])
-            row = records.get(id=movie['id'])
-            # row.update({
-            #     "id": movie['id']
-            # })
-
-        except:
+        if datasheet.records.filter(id=movie['id']).count() == 0:
             info = get_douban_info(movie['id'])
             print('要插入的：', info['chineseName'])
 
