@@ -17,4 +17,12 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: 'test'
-      run: echo 'Hello World!'    
+      run: echo 'Hello World!'  
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+        pip install imov
+        pip install vika
+    - name: run
+      run: python main.py
