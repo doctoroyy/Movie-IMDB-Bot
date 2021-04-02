@@ -16,8 +16,7 @@ import imov
 
 def get_html_doc(url):
     head = {
-        'user-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) '
-                      'Chrome/89.0.4389.90 Safari/537.36 '
+        'user-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36'
     }
     resopnse = requests.get(url, headers=head)
 
@@ -74,7 +73,7 @@ def get_douban_info(query_name):
 if __name__ == '__main__':
     vika = Vika("uskZWIcJI4lqLs8JOHfOwMb")
     # 通过 datasheetId 来指定要从哪张维格表操作数据。
-    datasheet = vika.datasheet("dstcclPiXMnNYvza6n", field_key="name")
+    datasheet = vika.datasheet("dstcclPiXMnNYvza6n", field_key="id")
     # 返回所有的记录
     records = datasheet.records.all()
 
@@ -360,18 +359,18 @@ if __name__ == '__main__':
             if info['chineseName'] != 'not found':
                 try:
                     datasheet.records.create({
-                        "id": movie['id'],
-                        "chi_name": info['chineseName'],
-                        "eng_name": movie['eng_name'],
-                        "director": info['directorName'],
-                        "director_name_en": movie['director'],
-                        "year": movie['year']
+                        "fldARNFRGuXJA": movie['id'],
+                        "fldDBZht5ouSc": info['chineseName'],
+                        "fldJuCfA75BqE": movie['eng_name'],
+                        "fld0cm9AErPTO": info['directorName'],
+                        "fldsFUuAKMdiJ": movie['director'],
+                        "fldvMAgTJLi35": movie['year']
                     })
                 except:
                     print('插入异常')
             else:
                 print('没找到')
             # print(info['chineseName'])
-            sleep(6)
+            sleep(8)
 'Star Wars: Episode V - The Empire Strikes Back'
 'Star Wars: Episode V - The Empire Strikes Back'
