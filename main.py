@@ -345,7 +345,7 @@ if __name__ == '__main__':
 
     print(movie_list)
     for movie in movie_list:
-        if datasheet.records.filter(id=movie['id']).count() == 0:
+        if datasheet.records.filter(fldARNFRGuXJA=movie['id']).count() == 0:
             info = get_douban_info(movie['id'])
             print('要插入的：', info['chineseName'])
 
