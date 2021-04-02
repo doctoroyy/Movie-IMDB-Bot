@@ -73,7 +73,7 @@ def get_douban_info(query_name):
 if __name__ == '__main__':
     vika = Vika("uskZWIcJI4lqLs8JOHfOwMb")
     # 通过 datasheetId 来指定要从哪张维格表操作数据。
-    datasheet = vika.datasheet("dstcclPiXMnNYvza6n", field_key="id")
+    datasheet = vika.datasheet("dstcclPiXMnNYvza6n", field_key="name")
     # 返回所有的记录
     records = datasheet.records.all()
 
@@ -341,23 +341,23 @@ if __name__ == '__main__':
     movie_list = [{'rank': _[0], 'id': _[1], 'director': _[2], 'eng_name': _[3], 'year': _[4], 'chi_name': ''} for _ in
                   movie_tuples]
 
-
-
     print(movie_list)
+
     for movie in movie_list:
-        if datasheet.records.filter(fldARNFRGuXJA=movie['id']).count() == 0:
+        if datasheet.records.filter(id=movie['id']).count() == 0:
             info = get_douban_info(movie['id'])
             print('要插入的：', info['chineseName'])
 
             if info['chineseName'] != 'not found':
                 try:
                     datasheet.records.create({
-                        "fldARNFRGuXJA": movie['id'],
-                        "fldDBZht5ouSc": info['chineseName'],
-                        "fldJuCfA75BqE": movie['eng_name'],
-                        "fld0cm9AErPTO": info['directorName'],
-                        "fldsFUuAKMdiJ": movie['director'],
-                        "fldvMAgTJLi35": movie['year']
+                        "id": movie['id'],
+                        "chi_name": info['chineseName'],
+                        "eng_name": movie['eng_name'],
+                        "director": info['directorName'],
+                        "director_name_en": movie['director'],
+                        "year": movie['year'],
+                        'rank': int(movie['rank'])
                     })
                 except:
                     print('插入异常')
@@ -365,5 +365,12 @@ if __name__ == '__main__':
                 print('没找到')
             # print(info['chineseName'])
             sleep(8)
-'Star Wars: Episode V - The Empire Strikes Back'
-'Star Wars: Episode V - The Empire Strikes Back'
+        else:
+            rows = datasheet.records.filter(id=movie['id'])
+            row = rows[0]
+            if row.rank is None:
+                row.update({
+                    'rank': int(movie['rank'])
+                })
+                print(movie['eng_name'])
+                sleep(1)
