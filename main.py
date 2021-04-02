@@ -372,6 +372,6 @@ if __name__ == '__main__':
             else:
                 print('没找到')
             # print(info['chineseName'])
-            sleep(random.random() * 6)
+            sleep(random.random() * 1.2)
 'Star Wars: Episode V - The Empire Strikes Back'
 'Star Wars: Episode V - The Empire Strikes Back'
