@@ -7,6 +7,8 @@ name: GET IMDB-TOP-250
 on:
   schedule:
     - cron: '0 23 * * *'
+  push:
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
