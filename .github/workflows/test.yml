@@ -36,4 +36,6 @@ jobs:
       env:
         API_TOKEN: ${{ secrets.VIKA_API_TOKEN }}
         DATASHEET_ID: ${{ secrets.DATASHEET_ID }}
+        SHARING_DST_ID: ${{ secrets.SHARING_DST_ID }}
+        TOP_VIEW_ID: ${{ secrets.TOP_VIEW_ID }}
       run: python main.py
