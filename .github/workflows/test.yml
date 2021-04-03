@@ -6,13 +6,13 @@ name: GET IMDB-TOP-250
 # events but only for the master branch
 on:
   schedule:
-    - cron: '0 0/4 * * *'
+    - cron: '0 23 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   CI:
     # The type of runner that the job will run on
-    runs-on: macos-10.15
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -31,4 +31,7 @@ jobs:
         pip install imov
         pip install vika
     - name: run
+      env:
+        API_TOKEN: ${{ secrets.VIKA_API_TOKEN }}
+        DATASHEET_ID: ${{ secrets.DATASHEET_ID }}
       run: python main.py
