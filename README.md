@@ -9,7 +9,7 @@
 
 ### 1. [注册维格表帐户](https://vika.cn/?inviteCode=28762276), 将 [互联网影视数据库](https://vika.cn/share/shrG4k0oxQCgCa4ggnptS) 保存为模板.
 
-### 2. fork 这个项目, 在 Setings 中依次创建如下 secrets key (*VIKA_API_TOKEN*, *DATASHEET_ID*, *SHARING_DST_ID*,  *TOP_VIEW_ID*)
+### 2. fork [这个项目](https://github.com/doctoroyy/Movie-IMDB-Bot), 在 Setings 中依次创建如下 secrets key (*VIKA_API_TOKEN*, *DATASHEET_ID*, *SHARING_DST_ID*,  *TOP_VIEW_ID*)
    
 <img src="https://s1.vika.cn/space/2021/04/03/518d3caf12eb4304be1c6c814836cc27?attname=image.png" />
 
