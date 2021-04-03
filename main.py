@@ -78,7 +78,7 @@ def reset_all_rank_to_none(records):
 
 
 if __name__ == '__main__':
-  vika = Vika("uskZWIcJI4lqLs8JOHfOwMb")
+  vika = Vika(os.environ['VIKA_API_TOKEN'])
 
   # 影视数据库
   dst_imdb = vika.datasheet(os.environ['DATASHEET_ID'], field_key="name")

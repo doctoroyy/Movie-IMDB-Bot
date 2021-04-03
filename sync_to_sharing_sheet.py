@@ -1,6 +1,6 @@
 import os
 
-# 最大并发请求数
+# 每次最多操作 10 行数据
 MAX_CONCURRENCY = 10
 
 
