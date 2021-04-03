@@ -3,13 +3,12 @@
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import re
-import traceback
 from time import sleep
-
 import requests
 from lxml import etree
 from vika import Vika
 import os
+
 
 def get_html_doc(url):
     head = {
@@ -34,7 +33,6 @@ def search_fields_by_xpath(html):
             return res[0].strip()
         except:
             return 'not found'
-
     return func
 
 
@@ -94,6 +92,8 @@ if __name__ == '__main__':
         })
         sleep(0.6)
 
+    print('Reset Done!❤')
+
     for movie in movie_list:
         if records.filter(id=movie['id']).count() == 0:
             info = get_douban_info(movie['id'])
@@ -109,10 +109,8 @@ if __name__ == '__main__':
                         "year": movie['year'],
                         'rank': int(movie['rank'])
                     })
-
-
-                except Exception as e:
-                    traceback.print_exc()
+                except:
+                    raise Exception
             else:
                 print('not fount')
             sleep(8)
@@ -122,3 +120,5 @@ if __name__ == '__main__':
                 'rank': int(movie['rank'])
             })
             sleep(0.02)
+    
+    print('All Done!❤')
