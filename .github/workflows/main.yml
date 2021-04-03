@@ -34,6 +34,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        mv imdb_top_250.html imdb_top_250.md
         git commit -m "Add changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
@@ -43,26 +44,16 @@ jobs:
       run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
     - name: 'Send mail to Me'
       uses: dawidd6/action-send-mail@master
+      env: 
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       with:
         server_address: smtp.163.com
         server_port: 465
         username: ${{ secrets.MAIL_USERNAME }}
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: IMDB-TOP-250 (${{env.REPORT_DATE}})
-        body: file://imdb_top_250.html
+        body: file://imdb_top_250.md
         to: 1445245708@qq.com
         from: Movie IMDB Bot
         content_type: text/html
         attachments: imdb_top_250.xlsx
-    - name: 'Send mail to Wll'
-      uses: dawidd6/action-send-mail@master
-      with:
-        server_address: smtp.qq.com
-        server_port: 465
-        username: ${{ secrets.QQ_MAIL_USERNAME }}
-        password: ${{ secrets.QQ_MAIL_PASSWORD }}
-        subject: 每日提醒
-        body: '鹭玲学姐起床啦！'
-        to: 1569033576@qq.com
-        from: Movie IMDB Bot
-        content_type: text/html
