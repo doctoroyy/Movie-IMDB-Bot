@@ -47,7 +47,7 @@ def get_chinese_name(html):
 def get_director_name(html):
   director_name_xpath = '//*[@id="content"]/div/div[1]/div[3]/div[2]/div[1]/div[2]/div/div/span[4]/text()'
   res = search_fields_by_xpath(html)(director_name_xpath)
-  if res != 'not found':
+  if res is not None:
     return res.split(' / ')[1]
   return res
 
