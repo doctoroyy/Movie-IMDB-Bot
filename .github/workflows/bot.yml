@@ -30,10 +30,13 @@ jobs:
         pip install setuptools wheel twine
         pip install imov
         pip install vika
+        pip install DingtalkChatbot
     - name: run
       env:
         VIKA_API_TOKEN: ${{ secrets.VIKA_API_TOKEN }}
         DATASHEET_ID: ${{ secrets.DATASHEET_ID }}
         SHARING_DST_ID: ${{ secrets.SHARING_DST_ID }}
         TOP_VIEW_ID: ${{ secrets.TOP_VIEW_ID }}
+        DINGDING_TOKEN: ${{ secrets.DINGDING_TOKEN }}
+        DINGDING_SECRET: ${{ secrets.DINGDING_SECRET}}
       run: python main.py
