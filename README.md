@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vika.cn/share/shruZUUMv38WYu9ywJeX1"><img src="https://s1.vika.cn/space/2021/04/03/26cf3d796c034d6aa3c50995b11338eb?attname=image.png" alt="Movie IMDB Bot" /></a>
-</p>
+</p> 
 
 # Movie IMDB Bot
 一个为电影爱好者获取 IMDB TOP 250 中英文对照信息的自动化工具.
