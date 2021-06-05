@@ -69,14 +69,6 @@ def get_douban_info(query_name):
   }
 
 
-def reset_all_rank_to_none(records):
-  for record in records:
-    record.update({
-      'rank': None
-    })
-    sleep(0.6)
-  print('Reset Done!❤')
-
 def send_msg_to_dingding(msg):
   webhook = 'https://oapi.dingtalk.com/robot/send?access_token=%s' % os.environ['DINGDING_TOKEN']
   secret = os.environ['DINGDING_SECRET']  # 可选：创建机器人勾选“加签”选项时使用
