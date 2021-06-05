@@ -69,7 +69,7 @@ def get_douban_info(query_name):
   }
 
 
-def send_msg_to_dingding(msg):
+def send_msg_to_dingding(msg='none'):
   webhook = 'https://oapi.dingtalk.com/robot/send?access_token=%s' % os.environ['DINGDING_TOKEN']
   secret = os.environ['DINGDING_SECRET']  # 可选：创建机器人勾选“加签”选项时使用
   # 初始化机器人小丁
