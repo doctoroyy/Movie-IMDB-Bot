@@ -28,4 +28,5 @@ def sync_to_sharing_sheet(dst_imdb, dst_sharing):
     } for _ in records_ready_to_insert
   ]
 
-  dst_sharing.records.bulk_create(updated_records)
+  for index in range(int(len(updated_records) / MAX_CONCURRENCY)):
+    dst_sharing.records.bulk_create(updated_records[index * MAX_CONCURRENCY: index * MAX_CONCURRENCY + MAX_CONCURRENCY])

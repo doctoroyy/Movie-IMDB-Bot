@@ -152,4 +152,4 @@ if __name__ == '__main__':
 
   send_msg_to_dingding('\n'.join(history_list))
 
-  sync_to_sharing_sheet(dst_imdb=dst_imdb, dst_sharing=dst_sharing)
+  sync_to_sharing_sheet(dst_imdb, dst_sharing)
