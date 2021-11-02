@@ -27,6 +27,7 @@
   
 # Use it
 在 .github/workflows/bot.yml 文件中，我们定义了事件触发的方式 schedule 可以设置定时触发，
+
 这里初始设置成了每天北京时间 07:00 开始执行任务。
 
 另外，有任何更改被 push 到 master 分支时，也会触发这个任务。
