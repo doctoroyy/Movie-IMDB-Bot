@@ -29,7 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
         pip install imov
-        pip install vika==1.1.4
+        pip install vika
         pip install DingtalkChatbot
     - name: run
       env:
