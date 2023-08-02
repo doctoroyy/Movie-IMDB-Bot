@@ -30,7 +30,7 @@ jobs:
         pip install setuptools wheel twine
         pip install imov
         pip install pydantic==1.6.2
-        pip install vika
+        pip install vika==1.1.6
         pip install DingtalkChatbot
     - name: run
       env:
