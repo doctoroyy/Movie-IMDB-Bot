@@ -1,8 +1,8 @@
 import os
 import time
 
-# 每次最多操作 2 行数据
-MAX_CONCURRENCY = 2
+# 每次最多操作 1 行数据
+MAX_CONCURRENCY = 1
 
 
 def sync_to_sharing_sheet(dst_imdb, dst_sharing):
