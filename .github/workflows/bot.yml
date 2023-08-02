@@ -29,8 +29,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
         pip install imov
-        pip install pydantic==1.6.2
-        pip install vika==1.1.6
+        pip install pydantic
+        pip install vika
         pip install DingtalkChatbot
     - name: run
       env:
