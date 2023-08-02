@@ -1,4 +1,5 @@
 import os
+import time
 
 # 每次最多操作 2 行数据
 MAX_CONCURRENCY = 2
@@ -16,6 +17,7 @@ def sync_to_sharing_sheet(dst_imdb, dst_sharing):
   # 批量删除
   for index in range(int(len(old_records) / MAX_CONCURRENCY)):
     dst_sharing.delete_records(record_ids[index * MAX_CONCURRENCY: index * MAX_CONCURRENCY + MAX_CONCURRENCY])
+    time.sleep(2)
 
   updated_records = [
     {
@@ -30,3 +32,4 @@ def sync_to_sharing_sheet(dst_imdb, dst_sharing):
 
   for index in range(int(len(updated_records) / MAX_CONCURRENCY)):
     dst_sharing.records.bulk_create(updated_records[index * MAX_CONCURRENCY: index * MAX_CONCURRENCY + MAX_CONCURRENCY])
+    time.sleep(2)
