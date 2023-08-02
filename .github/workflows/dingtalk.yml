@@ -3,6 +3,7 @@ name: Dingtalk Notify
 on:
   schedule:
     - cron: '10 3 * * 1-5' # 北京时间工作日 11:10 分
+  workflow_dispatch:
 
 jobs:
   notify:
