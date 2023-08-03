@@ -150,7 +150,7 @@ if __name__ == '__main__':
 
   print(history_list)
   msg = 'No changes detected'
-  if len(history_list) == 0:
+  if len(history_list) != 0:
     msg = '\n'.join(history_list)
 
   send_msg_to_dingding(msg)
