@@ -2,11 +2,12 @@ name: Dingtalk Notify
 
 on:
   schedule:
-    - cron: '51 2 * * 1-5' # 北京时间工作日 11:10 分
+    - cron: '51 2 * * 1-5' # 北京时间工作日 11:00 分
+    - cron: '26 10 * * 1-5' # 北京时间工作日 18:30 分
   workflow_dispatch:
 
 jobs:
-  notify:
+  notify_lunch:
     runs-on: ubuntu-latest
     steps:
     - name: Dingtalk Robot Notify
@@ -17,5 +18,18 @@ jobs:
       with:
         msgtype: text
         text: '点外卖了'
+        at_mobiles: '18270643520'
+
+  notify_clockin:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dingtalk Robot Notify
+      uses: leafney/dingtalk-action@v1.1.0
+      if: always()
+      env:
+        DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
+      with:
+        msgtype: text
+        text: '下班记得打卡'
         at_mobiles: '18270643520'
 
