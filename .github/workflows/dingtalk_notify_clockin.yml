@@ -1,8 +1,8 @@
-name: Dingtalk Notify
+name: Dingtalk Notify Clockin
 
 on:
   schedule:
-    - cron: '26 10 * * 1-5' # 北京时间工作日 18:30 分
+    - cron: '23 10 * * 1-5' # 北京时间工作日 18:30 分
   workflow_dispatch:
 
 jobs:
