@@ -17,7 +17,7 @@ def sync_to_sharing_sheet(dst_imdb, dst_sharing):
   # 批量删除
   for index in range(int(len(old_records) / MAX_CONCURRENCY)):
     dst_sharing.delete_records(record_ids[index * MAX_CONCURRENCY: index * MAX_CONCURRENCY + MAX_CONCURRENCY])
-    time.sleep(2)
+    time.sleep(6)
 
   updated_records = [
     {
