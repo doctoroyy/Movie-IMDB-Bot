@@ -1,0 +1,4 @@
+dingtalkchatbot>=1.5.7
+lxml>=4.9.2
+Requests==2.31.0
+vika>=1.3.1
