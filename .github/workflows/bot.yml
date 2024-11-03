@@ -27,11 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install setuptools wheel twine
-        pip install imov
-        pip install pydantic
-        pip install vika
-        pip install DingtalkChatbot
+        pip install -r requirements.txt
     - name: run
       env:
         VIKA_API_TOKEN: ${{ secrets.VIKA_API_TOKEN }}
